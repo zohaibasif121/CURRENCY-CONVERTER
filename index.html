@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <main>
+    <div class="container">
+        <h1>Currency Converter</h1>
+        <label for="amount">Enter Amount</label>
+        <input type="text" value="1" id="input">
+        <div class="exchange">
+            <div>
+                <p>from</p>
+            <div class="from" >
+                <div id="from_image">
+                    <img src="https://flagsapi.com/AE/flat/48.png" alt="country">
+                </div>
+                <select name="" id="select_from">
+                    <!-- <option value="">USA</option>
+                    <option value="">PAK</option>
+                    <option value="">CND</option> -->
+                </select>
+            </div>
+        </div>
+        <div class="logo">
+            <img src="Currency-Exchange--Streamline-Rounded----Material-Symbols.svg" alt="">
+        </div>
+            <div>
+                <p>to</p>
+            <div class="to">
+                <div id="to_img">
+                <img src="https://flagsapi.com/AE/flat/48.png" alt="country">
+            </div>
+                <select name="" id="select_to">
+                    <!-- <option value="">USA</option>
+                    <option value="" selected>PAK</option>
+                    <option value="">CND</option> -->
+                </select>
+            </div>
+        </div>
+        </div>
+        <div id="result">
+        <p>result</p>
+    </div>
+        <button id="btn">Convert</button>
+    </div>
+</main>
+    
+    <script src="script.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
