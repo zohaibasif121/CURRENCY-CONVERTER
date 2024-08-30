@@ -233,7 +233,7 @@ btn.addEventListener(`click`,async(e)=>{
     if (userinput<1 ) {
         alert(`Invalid Number`)
     }
-    let URl= `https:v6.exchangerate-api.com/v6/fe6ed7a8695a033c1bc3bf4e/latest/${crncy}`
+    const URl= `https:v6.exchangerate-api.com/v6/fe6ed7a8695a033c1bc3bf4e/latest/${crncy}`
     const response = await fetch(URl);
     // console.log(response);
     const data = await response.json();
