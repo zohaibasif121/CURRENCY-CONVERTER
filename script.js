@@ -227,32 +227,30 @@ const countries = [
     
 
 
-
-
-btn.addEventListener(`click`,async(e)=>{
-    if (userinput<1 ) {
-        alert(`Invalid Number`)
+btn.addEventListener('click', async (e) => {
+    if (userinput < 1) {
+        alert('Invalid Number');
+        return;
     }
-    const URl= `https:v6.exchangerate-api.com/v6/fe6ed7a8695a033c1bc3bf4e/latest/${crncy}`
-    const response = await fetch(URl);
-    // console.log(response);
-    const data = await response.json();
-    let final=(data.conversion_rates[convered]);
-    // console.log(final);
-    // console.log(convered)
+    let URl = `https://v6.exchangerate-api.com/v6/fe6ed7a8695a033c1bc3bf4e/latest/${crncy}`;
+    
+    try {
+        const response = await fetch(URl);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        let final = data.conversion_rates[convered];
 
-    function calculate() {
-        return userinput*(final);
+        function calculate() {
+            return userinput * final;
+        }
+        result.innerHTML = `
+        <p>${userinput} ${crncy} is equal to ${calculate()} ${convered}</p>
+        `;
+        uinput.value = '';
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        alert('Error fetching data. Please try again later.');
     }
-    result.innerHTML=`
-    <p>${userinput} ${crncy} is equla to ${calculate()} ${convered}</p>
-    `;
-    uinput.value=``;
-    
-})  ;
-
-
-        
-   
-
-    
+});
