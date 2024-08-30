@@ -101,9 +101,11 @@ main {
 }
 #btn:hover{
     opacity: 1;
+    box-shadow:1px 2px 7px;
 }
 #btn:focus{
     opacity: 1;
+    box-shadow:1px 2px 7px;
 }
 
 @media (max-width: 455px) {
